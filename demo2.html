@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轩枫阁-基于Canvas实现的炫酷3D动画大背景</title>
+	<style>
+	*{margin: 0;padding: 0;}
+	body{
+		background-color: #00c1ff;
+		-webkit-transition: background-color 400ms ease-in-out;
+		-ms-transition: background-color 400ms ease-in-out;
+		-o-transition: background-color 400ms ease-in-out;
+		-moz-transition: background-color 400ms ease-in-out;
+		transition: background-color 400ms ease-in-out;
+	}
+	.container {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+	}
+	#output {
+		opacity: 0.3;
+		width: 100%;
+		height: 100%;
+		-webkit-transition: all 400ms ease-in-out;
+		-ms-transition: all 400ms ease-in-out;
+		-o-transition: all 400ms ease-in-out;
+		-moz-transition: all 400ms ease-in-out;
+		transition: all 400ms ease-in-out;
+	}
+	.color{
+		width: 210px;
+		height: 20px;
+		margin: 0 auto;
+		position: fixed;
+		left: 50%;
+		margin-left: -110px;
+		bottom: 20px;
+	}
+	.color li{
+		float: left;
+		margin: 0 5px;
+		width: 20px;
+		height: 20px;
+		background: #ccc;
+		box-shadow: 0 0 4px #FFF;
+		list-style: none;
+		cursor: pointer;
+	}
+	.color li:nth-child(1){
+		background: #00c1ff;
+	}
+	.color li:nth-child(2){
+		background: #49dd84;
+	}
+	.color li:nth-child(3){
+		background: #ff5a3d;
+	}
+	.color li:nth-child(4){
+		background: #ffac3f;
+	}
+	.color li:nth-child(5){
+		background: #2b7cd3;
+	}
+	.color li:nth-child(6){
+		background: #ff8864;
+	}
+	.color li:nth-child(7){
+		background: #45ada8;
+	}
+	.logo{
+		width: 140px;
+		height: 70px;
+		position: fixed;
+		top: 10px;
+		left: 50%;
+		margin-left: -70px;
+		border: solid 1px #BBBBBB;
+		-webkit-transition: all 400ms ease-in-out;
+		-ms-transition: all 400ms ease-in-out;
+		-o-transition: all 400ms ease-in-out;
+		-moz-transition: all 400ms ease-in-out;
+		transition: all 400ms ease-in-out;
+	}
+	.logo:hover{
+		border: solid 1px #FFF;
+		background: rgba(255, 255, 255, 0.2);
+	}
+	</style>
+	<script src="jquery.js"></script>
+	<script src="FSS.js"></script>
+	<script>
+	$(function(){
+		FSS("container", "output");
+		$(".color li").mouseover(function(event) {
+			$("body").css("background-color", $(this).css("background-color"));
+		});
+	});
+	</script>
+</head>
+<body>
+	<!-- dom结构 可自定义 -->
+	<div id="container" class="container">
+	    <div id="output"></div>
+	</div>
+
+	<ul class="color">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+
+	<div class="logo"><a href="http://www.xuanfengge.com/" title="轩枫阁"><img src="http://www.xuanfengge.com/wp-content/themes/lee2.0/images/logo.png" alt=""></a></div>
+</body>
+</html>
